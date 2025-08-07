@@ -115,8 +115,8 @@ public sealed unsafe class Plugin : IDalamudPlugin
             return;
 
         // Disable features in PvP
-        if (Client.IsPvP)
-            return;
+        //if (Client.IsPvP)
+        //    return;
 
         // Disable in GPose
         if (Client.IsGPosing)
