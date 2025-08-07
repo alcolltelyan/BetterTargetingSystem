@@ -102,10 +102,10 @@ public unsafe class Utils
     internal static uint[] GetEnemyListObjectIds()
     {
         var addonByName = Plugin.GameGui.GetAddonByName("_EnemyList", 1);
-        if (addonByName == IntPtr.Zero)
+        if (addonByName.IsNull)
             return Array.Empty<uint>();
 
-        var addon = (AddonEnemyList*)addonByName;
+        var addon = (AddonEnemyList*)addonByName.Address;
         var numArray = RaptureAtkModule->AtkModule.AtkArrayDataHolder.NumberArrays[21];
         var list = new List<uint>(addon->EnemyCount);
         for (var i = 0; i < addon->EnemyCount; i++)

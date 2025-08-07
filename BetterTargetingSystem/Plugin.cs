@@ -4,6 +4,7 @@ using Dalamud.Game.Command;
 using Dalamud.Interface.Windowing;
 using Dalamud.IoC;
 using Dalamud.Plugin;
+using Dalamud.Bindings.ImGui;
 using Dalamud.Utility.Signatures;
 using FFXIVClientStructs.FFXIV.Client.Game.Event;
 using FFXIVClientStructs.FFXIV.Client.Game.Group;
@@ -123,7 +124,7 @@ public sealed unsafe class Plugin : IDalamudPlugin
             return;
 
         // Disable if keyboard is being used to type text
-        if (Utils.IsTextInputActive || ImGuiNET.ImGui.GetIO().WantCaptureKeyboard)
+        if (Utils.IsTextInputActive || ImGui.GetIO().WantCaptureKeyboard)
             return;
 
         Keybinds.Keybind.GetKeyboardState();

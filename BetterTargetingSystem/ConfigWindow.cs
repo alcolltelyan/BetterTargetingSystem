@@ -1,6 +1,6 @@
 using Dalamud.Game.ClientState.Keys;
 using Dalamud.Interface.Windowing;
-using ImGuiNET;
+using Dalamud.Bindings.ImGui;
 using System;
 using System.Numerics;
 
@@ -370,8 +370,6 @@ namespace BetterTargetingSystem.Windows
             this.ModifyingKeybindLHTK = false;
             this.ModifyingKeybindBAOETK = false;
             this.CurrentKeys = new Keybind();
-            ImGui.SetWindowFocus(null); // unfocus window to clear keyboard focus
-            ImGui.SetWindowFocus(); // refocus window
         }
 
         private Keybind GetKeys()
